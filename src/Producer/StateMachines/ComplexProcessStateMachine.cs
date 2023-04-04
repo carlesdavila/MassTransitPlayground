@@ -14,7 +14,7 @@ public class ComplexProcessStateMachine: MassTransitStateMachine<ComplexProcessS
     public State ComplexProcessStep1Fail { get; }
     public State Finished { get; }
     
-    public Event<ComplexProcessRequested> AwsCustomClassificationInFoldersAsyncRequested { get; }
+    public Event<ComplexProcessRequested> ComplexProcessRequested { get; }
     
     private void ConfigureCorrelationIds()
     {
