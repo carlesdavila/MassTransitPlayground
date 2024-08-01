@@ -4,11 +4,23 @@ namespace Producer.Activities;
 
 public class FirstActivity : IActivity<FirstActivityArguments, FirstActivityLog>
 {
+    private IMessageDataRepository _repository;
+
+    public FirstActivity(IMessageDataRepository repository)
+    {
+        _repository = repository;
+    }
+
     public async Task<ExecutionResult> Execute(ExecuteContext<FirstActivityArguments> context)
     {
         Console.WriteLine("FirstActivity EXECUTED");
+
+        var nextArguments = new 
+        {
+            Notes =  await _repository.PutString(new string('*',1000))
+        };
         
-        return context.Completed<FirstActivityLog>(new {Property1 = "someValue"});
+        return context.CompletedWithVariables(nextArguments);
     }
 
     public async Task<CompensationResult> Compensate(CompensateContext<FirstActivityLog> context)
