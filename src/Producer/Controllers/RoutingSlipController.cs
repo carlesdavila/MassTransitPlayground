@@ -16,7 +16,7 @@ public class RoutingSlipController: ControllerBase
         _bus = bus;
     }
 
-    [HttpPost("Execute")]
+    [HttpPost("ExecuteRS")]
     public async Task<IActionResult> PostMessage()
     {
 

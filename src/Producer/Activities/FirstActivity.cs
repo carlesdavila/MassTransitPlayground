@@ -17,7 +17,7 @@ public class FirstActivity : IActivity<FirstActivityArguments, FirstActivityLog>
 
         var nextArguments = new 
         {
-            Notes =  await _repository.PutString(new string('*',1000))
+            Notes =  await _repository.PutString(new string('*',10000))
         };
         
         return context.CompletedWithVariables(nextArguments);
