@@ -13,13 +13,13 @@ public static class MasstransitExtensions
 
         services.AddMassTransit(x =>
         {
-            x.SetKebabCaseEndpointNameFormatter();
+           // x.SetKebabCaseEndpointNameFormatter();
             
-            x.AddActivitiesFromNamespaceContaining<FirstActivity>();
+           // x.AddActivitiesFromNamespaceContaining<FirstActivity>();
             
             x.UsingRabbitMq((context, cfg) =>
             {
-                cfg.UseMessageData(messageDataRepository);
+               // cfg.UseMessageData(messageDataRepository);
                 cfg.Host("localhost", "/", h =>
                 {
                     h.Username("guest");

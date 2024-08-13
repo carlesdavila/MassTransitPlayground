@@ -4,6 +4,8 @@ using Producer.StateMachines;
 
 namespace Producer.Controllers;
 
+[ApiController]
+[Route("[controller]")]
 public class StateMachineController: ControllerBase
 {
     private readonly IPublishEndpoint _publishEndpoint;

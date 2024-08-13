@@ -5,6 +5,8 @@ using Producer.Activities;
 
 namespace Producer.Controllers;
 
+[ApiController]
+[Route("[controller]")]
 public class RoutingSlipController: ControllerBase
 {
     private readonly IEndpointNameFormatter _endpointNameFormatter;
