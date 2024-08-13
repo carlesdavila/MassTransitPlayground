@@ -10,6 +10,8 @@ public static class MasstransitExtensions
     public static void AddConfiguredMassTransit(this IServiceCollection services)
     {
         IMessageDataRepository messageDataRepository = new InMemoryMessageDataRepository();
+        
+        services.AddSingleton(messageDataRepository);
 
         services.AddMassTransit(x =>
         {
